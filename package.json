@@ -4,7 +4,8 @@
   "description": "A cli tools for Android developer",
   "main": "index.js",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "eslint-check": "eslint --print-config . | eslint-config-prettier-check"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,16 @@
   "homepage": "https://github.com/talenguyen/andev#readme",
   "devDependencies": {
     "eslint": "^5.4.0",
+    "eslint-config-prettier": "^3.0.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^3.1.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "meow": "^5.0.0",
+    "prompts": "^0.1.14"
   }
 }
