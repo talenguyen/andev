@@ -1,0 +1,24 @@
+{
+  "name": "andev",
+  "version": "1.0.0",
+  "description": "A cli tools for Android developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talenguyen/andev.git"
+  },
+  "keywords": [
+    "android",
+    "cli",
+    "development"
+  ],
+  "author": "Giang Nguyen <giangnguyen.tale@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/talenguyen/andev/issues"
+  },
+  "homepage": "https://github.com/talenguyen/andev#readme"
+}
