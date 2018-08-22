@@ -1,3 +1,9 @@
 module.exports = {
-    "extends": "standard"
+    "extends": [
+        "prettier",
+        "prettier/standard"
+    ],
+    "plugins": [
+        "prettier"
+    ]
 };
