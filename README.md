@@ -5,7 +5,7 @@ A cli tools for Android Developer
 ## Features
 
  * [x] Open deeplink 
- * [ ] Clear cache
+ * [x] Clear cache
  * [ ] Install apk
  * [ ] Uninstall package
  
