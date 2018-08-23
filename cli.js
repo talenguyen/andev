@@ -16,6 +16,10 @@ const cli = meow(help,
         type: 'boolean',
         alias: 'c'
       },
+      uninstall: {
+        type: 'boolean',
+        alias: 'u'
+      }
     }
   }
 )

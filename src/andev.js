@@ -1,5 +1,7 @@
 const AdbManager = require('./adb-manager')
-const { deeplink, clear } = require('./commands')
+const help = require('./help')
+const logger = require('./logger')
+const { deeplink, clear, uninstall } = require('./commands')
 
 const andev = (flags, input) => {
 
@@ -11,6 +13,11 @@ const andev = (flags, input) => {
         clear(input[0])
         return
     }
+    if (flags.uninstall) {
+        uninstall(input[0])
+        return
+    }
+    logger.error(help)
 }
 
 module.exports = andev

@@ -61,9 +61,21 @@ const clearData = (device, package) => (new Promise((resolve, reject) => {
     })
 }))
 
+const uninstallPackage = (device, package) => (new Promise((resolve, reject) => {
+    const command = makeAdbCommand(device, `uninstall ${package}`)
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            reject(error)
+        } else {
+            resolve(stdout)
+        }
+    })
+}))
+
 module.exports = {
     listDevices,
     listPackages,
     openLink,
-    clearData
+    clearData,
+    uninstallPackage
 }
