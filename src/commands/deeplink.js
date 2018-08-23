@@ -1,7 +1,6 @@
 const deviceManager = require('../device-manager')
 const adbManager = require('../adb-manager')
 const logger = require('../logger')
-const { errors } = require('../messages')
 
 const usage = `
   Usage: 
@@ -11,7 +10,7 @@ const usage = `
       link    link to open
 
     Example:
-      $ andev deeplink tikivn://home
+      $ andev --deeplink https://gogole.com
 `
 
 const deeplink = async (link) => {
