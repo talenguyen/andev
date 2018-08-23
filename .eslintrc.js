@@ -5,5 +5,8 @@ module.exports = {
     ],
     "plugins": [
         "prettier"
-    ]
+    ],
+    "parserOptions": {
+        "ecmaVersion": 8
+    }
 };
