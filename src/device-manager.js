@@ -1,27 +1,10 @@
 const exec = require('child_process').exec
 const { errors } = require('./messages')
 const prompts = require('prompts')
-
-const listDevices = () => (new Promise((resolve, reject) => {
-    exec("adb devices", (error, stdout, stderr) => {
-        if (error) {
-            reject(error)
-        } else {
-            const devices = stdout.split('\n')
-                .filter(line => {
-                    return line !== "List of devices attached" && line.length > 0
-                })
-                .map(line => {
-                    const spaceIndex = line.indexOf("device")
-                    return line.substring(0, spaceIndex).trim()
-                })
-            resolve(devices)
-        }
-    })
-}))
+const adbManager = require('./adb-manager')
 
 const selectDevice = async () => {
-    const devices = await listDevices()
+    const devices = await adbManager.listDevices()
 
     if (devices.length == 0) {
         throw errors.deviceNotAttached
