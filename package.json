@@ -1,5 +1,5 @@
 {
-  "name": "andev",
+  "name": "@talenguyen/andev",
   "version": "1.0.0",
   "description": "A cli tools for Android developer",
   "main": "index.js",

@@ -5,14 +5,14 @@ A cli tools for Android Developer
 ## Features
 
  * [x] Open deeplink 
- * [x] Clear cache
+ * [ ] Clear cache
  * [ ] Install apk
  * [ ] Uninstall package
  
 ## Install
 
 ```shell
-$ npm i -g andev
+$ npm i -g @talenguyen/andev
 ```
 
 ## Usage
