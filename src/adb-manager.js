@@ -13,6 +13,57 @@ const openLink = (device, link) => (new Promise((resolve, reject) => {
     })
 }))
 
+const listDevices = () => (new Promise((resolve, reject) => {
+    exec("adb devices", (error, stdout, stderr) => {
+        if (error) {
+            reject(error)
+        } else {
+            const devices = stdout.split('\n')
+                .filter(line => {
+                    return line !== "List of devices attached" && line.length > 0
+                })
+                .map(line => {
+                    const spaceIndex = line.indexOf("device")
+                    return line.substring(0, spaceIndex).trim()
+                })
+            resolve(devices)
+        }
+    })
+}))
+
+const listPackages = (device, package) => (new Promise((resolve, reject) => {
+    const command = makeAdbCommand(device, `shell pm list packages -3`)
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            reject(error)
+        } else {
+            const packages = stdout.split('\n')
+                .filter(line => {
+                    return line.length > 0
+                })
+                .map(line => {
+                    const packages = line.replace('package:', '').replace('\r', '')
+                    return packages
+                })
+            resolve(packages)
+        }
+    })
+}))
+
+const clearData = (device, package) => (new Promise((resolve, reject) => {
+    const command = makeAdbCommand(device, `shell pm clear ${package}`)
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            reject(error)
+        } else {
+            resolve(stdout)
+        }
+    })
+}))
+
 module.exports = {
-    openLink
+    listDevices,
+    listPackages,
+    openLink,
+    clearData
 }
