@@ -7,7 +7,7 @@ A cli tools for Android Developer
  * [x] Open deeplink 
  * [x] Clear cache
  * [ ] Install apk
- * [ ] Uninstall package
+ * [x] Uninstall package
  
 ## Install
 
