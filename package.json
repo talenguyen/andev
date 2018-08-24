@@ -1,6 +1,6 @@
 {
   "name": "@talenguyen/andev",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A cli tools for Android developer",
   "main": "index.js",
   "scripts": {
