@@ -7,6 +7,9 @@
     "test": "eslint .",
     "eslint-check": "eslint --print-config . | eslint-config-prettier-check"
   },
+  "bin": {
+    "andev": "./cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/talenguyen/andev.git"
