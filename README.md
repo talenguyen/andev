@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/talenguyen/andev.svg?branch=master)](https://travis-ci.org/talenguyen/andev)
 [![npm](https://img.shields.io/badge/npm-v1.0.0-blue.svg)](https://www.npmjs.com/package/@talenguyen/andev)
 
-
 # Andev
 
 A cli tools for Android Developer
@@ -23,15 +22,17 @@ $ npm i -g @talenguyen/andev
 
 ```shell
 Usage:
-    $ andev --help
+  $ andev --help
 
-    Options:
-      --deeplink, d Open deep-link
-      --clear, c    Clear cache
+  Options:
+    --deeplink, d   Open deep-link
+    --clear, c      Clear cache
+    --uninstall, u  Uninstall 
 
-    Example:
-      $ andev --d https://google.com
-      $ andev --c com.android.chrome
+  Example:
+    $ andev --d https://google.com
+    $ andev --c com.android.chrome
+    $ andev --uninstall com.android.chrome
 ```
 
 ## Author
