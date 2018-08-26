@@ -10,6 +10,11 @@ const selectPackage = async (device, package) => {
         throw errors.noPackageFound
     }
 
+    if (packages.length == 1) {
+        return packages[0]
+    }
+
+
     if (packages.length > 5) {
         throw errors.moreThan5Packages
     }
