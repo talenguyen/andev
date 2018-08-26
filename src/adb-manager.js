@@ -32,7 +32,7 @@ const listDevices = () => (new Promise((resolve, reject) => {
 }))
 
 const listPackages = (device, package) => (new Promise((resolve, reject) => {
-    const command = makeAdbCommand(device, `shell pm list packages -3`)
+    const command = makeAdbCommand(device, `shell pm list packages -3 | grep ${package}`)
     exec(command, (error, stdout, stderr) => {
         if (error) {
             reject(error)
