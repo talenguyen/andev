@@ -17,6 +17,7 @@ const deeplink = async (link) => {
     if (link) {
         try {
             const device = await deviceManager.selectDevice()
+	    logger.debug(`Open link ${link} on ${device}`)
             const result = await adbManager.openLink(device, link)
             logger.debug(result)
         } catch (error) {

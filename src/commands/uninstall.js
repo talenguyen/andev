@@ -19,6 +19,7 @@ const uninstall = async (pkg) => {
         try {
             const device = await deviceManager.selectDevice()
             const package = await packageManager.selectPackage(device, pkg)
+	    logger.debug(`uninstall ${package} on ${device}`)
             const result = await adbManager.uninstallPackage(device, package)
             logger.debug(result)
         } catch (error) {

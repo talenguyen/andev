@@ -19,6 +19,7 @@ const clear = async (pkg) => {
         try {
             const device = await deviceManager.selectDevice()
             const package = await packageManager.selectPackage(device, pkg)
+	    logger.debug(`Clear data ${device}:${package}`)
             const result = await adbManager.clearData(device, package)
             logger.debug(result)
         } catch (error) {
