@@ -1,3 +1,4 @@
+const logger = require('./logger')
 const exec = require('child_process').exec
 
 const makeAdbCommand = (device, command) => `adb -s ${device} ${command}`
@@ -72,10 +73,22 @@ const uninstallPackage = (device, package) => (new Promise((resolve, reject) => 
     })
 }))
 
+const installApk = (device, apkFile) => (new Promise((resolve, reject) => {
+    const command = makeAdbCommand(device, `install ${apkFile}`)
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            reject(error)
+        } else {
+            resolve(stdout)
+        }
+    })
+}))
+
 module.exports = {
     listDevices,
     listPackages,
     openLink,
     clearData,
+    installApk,
     uninstallPackage
 }

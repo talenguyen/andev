@@ -9,9 +9,11 @@ A cli tools for Android Developer
 
  * [x] Open deeplink 
  * [x] Clear cache
- * [ ] Install apk
+ * [x] Install apk
  * [x] Uninstall package
- 
+ * [ ] Send text to device
+ * [ ] Connect device over WI-FI
+
 ## Install
 
 ```shell
