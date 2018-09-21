@@ -14,4 +14,4 @@ module.exports = `
       $ andev --uninstall com.android.chrome
       $ andev --install app/buid/output
       
-`
+`;

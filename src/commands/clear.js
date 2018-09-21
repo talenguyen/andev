@@ -1,7 +1,7 @@
-const deviceManager = require('../device-manager')
-const adbManager = require('../adb-manager')
-const packageManager = require('../package-manager')
-const logger = require('../logger')
+const deviceManager = require("../device-manager");
+const adbManager = require("../adb-manager");
+const packageManager = require("../package-manager");
+const logger = require("../logger");
 
 const usage = `
   Usage: 
@@ -12,22 +12,22 @@ const usage = `
 
     Example:
       $ andev --clear com.android.google
-`
+`;
 
-const clear = async (pkg) => {
-    if (pkg) {
-        try {
-            const device = await deviceManager.selectDevice()
-            const package = await packageManager.selectPackage(device, pkg)
-	    logger.debug(`Clear data ${device}:${package}`)
-            const result = await adbManager.clearData(device, package)
-            logger.debug(result)
-        } catch (error) {
-            logger.error(error)
-        }
-    } else {
-        logger.error(usage)
+const clear = async pkg => {
+  if (pkg) {
+    try {
+      const device = await deviceManager.selectDevice();
+      const package = await packageManager.selectPackage(device, pkg);
+      logger.debug(`Clear data ${device}:${package}`);
+      const result = await adbManager.clearData(device, package);
+      logger.debug(result);
+    } catch (error) {
+      logger.error(error);
     }
-}
+  } else {
+    logger.error(usage);
+  }
+};
 
-module.exports = clear
+module.exports = clear;
