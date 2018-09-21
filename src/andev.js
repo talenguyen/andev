@@ -1,7 +1,7 @@
 const AdbManager = require("./adb-manager");
 const help = require("./help");
 const logger = require("./logger");
-const { deeplink, clear, uninstall, install } = require("./commands");
+const { deeplink, clear, uninstall, install, text } = require("./commands");
 
 const andev = (flags, input) => {
   if (flags.deeplink) {
@@ -18,6 +18,10 @@ const andev = (flags, input) => {
   }
   if (flags.uninstall) {
     uninstall(input[0]);
+    return;
+  }
+  if (flags.text) {
+    text(input[0]);
     return;
   }
   logger.error(help);

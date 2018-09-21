@@ -98,11 +98,28 @@ const installApk = (device, apkFile) =>
     });
   });
 
+const sendText = (device, text) =>
+  new Promise((resolve, reject) => {
+    const formattedText = text.split(" ").join("\\ ");
+    const command = makeAdbCommand(
+      device,
+      `shell input text "${formattedText}"`
+    );
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(stdout);
+      }
+    });
+  });
+
 module.exports = {
   listDevices,
   listPackages,
   openLink,
   clearData,
   installApk,
+  sendText,
   uninstallPackage
 };
