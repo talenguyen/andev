@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/talenguyen/andev.svg?branch=master)](https://travis-ci.org/talenguyen/andev)
-[![npm](https://img.shields.io/badge/npm-v1.1.2-blue.svg)](https://www.npmjs.com/package/@talenguyen/andev)
+[![npm](https://img.shields.io/badge/npm-v1.1.5-blue.svg)](https://www.npmjs.com/package/@talenguyen/andev)
 
 # Andev
 
