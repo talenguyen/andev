@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/talenguyen/andev.svg?branch=master)](https://travis-ci.org/talenguyen/andev)
-[![npm](https://img.shields.io/badge/npm-v1.1.2-blue.svg)](https://www.npmjs.com/package/@talenguyen/andev)
+[![npm](https://img.shields.io/badge/npm-v1.1.6-blue.svg)](https://www.npmjs.com/package/@talenguyen/andev)
 
 # Andev
 
@@ -11,7 +11,7 @@ A cli tools for Android Developer
  * [x] Clear cache
  * [x] Install apk
  * [x] Uninstall package
- * [ ] Send text to device
+ * [x] Send text to device
  * [ ] Connect device over WI-FI
 
 ## Install
